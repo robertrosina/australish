@@ -1333,13 +1333,6 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
 }
 
 
-/* DEFAULT: hidden and non-blocking */
-#preload {
-  opacity: 1 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  z-index: 9999 !important;
-}
 
   @keyframes preloadShow {
     0%, 80%   { opacity: 1; visibility: visible; pointer-events: auto; }
