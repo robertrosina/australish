@@ -1335,9 +1335,10 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
 
 /* DEFAULT: hidden and non-blocking */
 #preload {
-  opacity: 0 !important;
+  opacity: 1 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  z-index: 9999 !important;
 }
 
 /* If animations are available, briefly show then hide (total ~5s) */
@@ -1354,22 +1355,6 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
     0%, 80%   { opacity: 1; visibility: visible; pointer-events: auto; }
     100%      { opacity: 0; visibility: hidden; pointer-events: none; }
   }
-}
-
-/* Reduced motion: don’t show it at all */
-@media (prefers-reduced-motion: reduce) {
-  #preload {
-    animation: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-}
-
-/* Ensure header always renders regardless of preload state */
-#preload.active ~ header.nav,
-#preload:not(.done) ~ header.nav {
-  display: flex !important;
 }
 
 #preload { animation: preloadFadeIn 300ms ease-out; }
