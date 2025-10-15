@@ -1412,3 +1412,43 @@ header.nav #primary-nav{
 
 /* If you use the collapsed/hamburger mode, keep the flag visible and separate */
 header.nav[data-collapsed="true"] #primary-nav{ width: auto !important; }
+
+
+
+
+
+
+
+/* Treasury split layout */
+.pledge-card .pledge-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 900px){
+  .pledge-card .pledge-grid{
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Stretch list spacing */
+.stretch-list{
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.stretch-list li{ margin: 6px 0; }
+
+/* Optional visual separation on dark */
+.pledge-right{
+  border-left: 1px solid var(--cardLine);
+  padding-left: 16px;
+}
+@media (max-width: 899px){
+  .pledge-right{
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--cardLine);
+    padding-top: 12px;
+  }
+}
