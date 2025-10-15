@@ -10,6 +10,10 @@
   --soft:#f4f6fb;           /* very light blue tint background for soft sections */
   --radius:16px;
 --brightband: #0077c2; /* lighter rally blue */
+  --gold: #d4af37; /* classic heraldic gold */
+  --goldHover: #e1c45c;
+}
+
 
 }
 
@@ -1318,4 +1322,12 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
   header.nav nav[aria-label="Primary"] {
     display: none !important;
   }
+}
+
+
+/* Force the Declaration download button to use the default primary styling */
+#charter .btn.primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
 }
