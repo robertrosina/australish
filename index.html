@@ -58,7 +58,7 @@
 </head>
 <body>
 
-<!-- PRELOAD OVERLAY -->
+<!-- PRELOAD OVERLAY
 <div id="preload" role="status" aria-live="polite" aria-label="Loading">
   <div class="preload-backdrop" aria-hidden="true"></div>
   <div class="preload-vignette" aria-hidden="true"></div>
@@ -67,7 +67,7 @@
     <p class="preload-line preload-1"><strong>WE ACKNOWLEDGE OURSELVES.</strong></p>
     <p class="preload-line preload-2"><strong>AND SHALL BE ACKNOWLEDGED.</strong></p>
   </div>
-</div>
+</div> -->
 
 
   <!-- NAV -->
@@ -156,8 +156,10 @@
     <div class="container">
       <h2>Join the Australish Rights Council</h2>
 	        <p class="muted" style="margin-top:6px">
-        Join the mailing list and enter your name into the Witness Roll — a permanent public record of those who stood for recognition.
-      </p>
+        Join the Australish Rights Council and enter your name into the Witness Roll — a permanent public record of those who stood for recognition. The first thousand names shall be preserved in archive as the founders in record.  </p><p>To add one's name to the Witness Roll is to acknowledge that a founding declaration has been issued in the name of a people, and that this moment has entered public record. It does not require agreement with every clause, nor any pledge of activism, money, or politics. It is simply to affirm: <em>“This Declaration has been made, and I recognise that from this moment, a Council is called into being to speak for the Australish people.” </em></p><p><strong>This is the first step on the road to political representation and self-determination.</strong></p>
+		      </p>
+			  
+			  
       <form id="join-form" class="row2" style="margin-top:14px" onsubmit="return false" aria-label="Join the Witness Roll">
         <div>
           <label class="small muted" for="fullName">Full name</label>
@@ -173,13 +175,23 @@
         </div>
         <div style="grid-column:1/-1; display:flex; align-items:center; gap:8px">
           <input id="witness" type="checkbox" checked />
-          <label for="witness" class="small muted">Add me to the Witness Roll (Phase I) and notify me when the Founding Treasury opens (Phase II).</label>
+          <label for="witness" class="small muted">Add me to the Witness Roll.</label>
         </div>
         <div style="grid-column:1/-1">
           <button class="btn primary" id="join-submit">Submit</button>
           <span id="join-status" class="small muted" style="margin-left:8px"></span>
         </div>
       </form>
+	  <section id="witness" class="ledger-display">
+  <details id="witnessRoll" class="card soft" data-src="witnesses.json">
+    <summary class="btn">Show Witness Roll (Phase I)</summary>
+    <div id="witnessContent" style="display:none">
+      <p class="small muted">Here listed are witnesses to the Australish Declaration.</p>
+      <ul id="witnessList" class="ledger-list"></ul>
+    </div>
+  </details>
+</section>
+
     </div>
   </section>
 
@@ -575,6 +587,56 @@ The long-term objective is statutory recognition: that a future <em>Act to Const
     }
   }, 5000);
 </script>
+
+<script>
+(function () {
+  const det = document.getElementById('witnessRoll');
+  if (!det) return;
+
+  let loaded = false; // fetch once
+  const src = det.getAttribute('data-src') || 'witnesses.json';
+  const content = document.getElementById('witnessContent');
+  const list = document.getElementById('witnessList');
+  const summary = det.querySelector('summary');
+
+  det.addEventListener('toggle', async () => {
+    // Update summary label
+    summary.textContent = det.open ? 'Hide Witness Roll' : 'Show Witness Roll (Phase I)';
+
+    // Reveal/hide content
+    content.style.display = det.open ? '' : 'none';
+
+    // Lazy-load once
+    if (det.open && !loaded) {
+      loaded = true;
+      summary.insertAdjacentText('afterend', ''); // nudge reflow on some browsers
+      list.innerHTML = '<li class="small muted">Loading…</li>';
+      try {
+        const res = await fetch(src, { cache: 'no-store' });
+        const data = await res.json();
+
+        // Clear and render
+        list.innerHTML = '';
+        (Array.isArray(data) ? data : []).forEach(w => {
+          const li = document.createElement('li');
+          const num = (w.number != null) ? `Witness No. ${w.number} — ` : '';
+          const loc = w.locality ? ` — ${w.locality}` : '';
+          const date = w.date ? ` — Entered ${w.date}` : '';
+          li.textContent = `${num}${w.name}${loc}${date}`;
+          list.appendChild(li);
+        });
+
+        if (!list.children.length) {
+          list.innerHTML = '<li class="small muted">No entries yet.</li>';
+        }
+      } catch (e) {
+        list.innerHTML = '<li class="small muted">Unable to load the roll right now.</li>';
+      }
+    }
+  });
+})();
+</script>
+
 
 </body>
 </html>

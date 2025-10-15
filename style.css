@@ -1452,3 +1452,21 @@ header.nav[data-collapsed="true"] #primary-nav{ width: auto !important; }
     padding-top: 12px;
   }
 }
+
+/* Collapsed by default; opens on click. Style summary like a button */
+#witnessRoll > summary.btn {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+#witnessRoll > summary.btn::-webkit-details-marker { display: none; }
+
+/* Ledger look */
+.ledger-list { 
+  margin: 8px 0 0; padding: 0; list-style: none; 
+  border-top: 1px solid var(--line);
+}
+.ledger-list li {
+  padding: 10px 0; 
+  border-bottom: 1px solid var(--line);
+}
