@@ -1332,29 +1332,33 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
   color: #fff !important;
 }
 
-/* Force preload to auto disappear after 5s with fade-out */
+
+/* DEFAULT: hidden and non-blocking */
 #preload {
-  animation: preloadHold 5s linear forwards;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
-@keyframes preloadHold {
-  0%   { opacity: 1; visibility: visible; }
-  80%  { opacity: 1; visibility: visible; }  /* Hold visible for ~4s */
-  100% { opacity: 0; visibility: hidden; pointer-events: none; }
+/* If animations are available, briefly show then hide (total ~5s) */
+@supports (animation: name) {
+  #preload {
+    animation: preloadShow 5s ease-out forwards !important;
+    /* ensure it sits above while visible */
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  @keyframes preloadShow {
+    0%, 80%   { opacity: 1; visibility: visible; pointer-events: auto; }
+    100%      { opacity: 0; visibility: hidden; pointer-events: none; }
+  }
 }
 
-/* 1) Auto-dismiss the veil after ~5s (hold, then fade, then become inert) */
-#preload {
-  animation: preloadHold 5s ease-out forwards !important;
-}
-@keyframes preloadHold {
-  0%, 80% { opacity: 1; visibility: visible; }
-  100%    { opacity: 0; visibility: hidden; pointer-events: none; }
-}
-
-/* 2) Reduced-motion users: remove it immediately (don’t depend on animations) */
+/* Reduced motion: don’t show it at all */
 @media (prefers-reduced-motion: reduce) {
-  #preload { 
+  #preload {
     animation: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -1362,9 +1366,11 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
   }
 }
 
-/* 3) Your CSS hides the nav until #preload gets a class it never gets.
-      Override those rules so the nav is visible regardless. */
-#preload:not(.done) ~ header.nav,
-#preload.active ~ header.nav {
+/* Ensure header always renders regardless of preload state */
+#preload.active ~ header.nav,
+#preload:not(.done) ~ header.nav {
   display: flex !important;
 }
+
+#preload { animation: preloadFadeIn 300ms ease-out; }
+#preload.fade-out { animation: preloadFadeOut 420ms ease-in forwards; }
