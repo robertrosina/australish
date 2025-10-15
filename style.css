@@ -1331,3 +1331,14 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
   border-color: var(--accent) !important;
   color: #fff !important;
 }
+
+/* Force preload to auto disappear after 5s with fade-out */
+#preload {
+  animation: preloadHold 5s linear forwards;
+}
+
+@keyframes preloadHold {
+  0%   { opacity: 1; visibility: visible; }
+  80%  { opacity: 1; visibility: visible; }  /* Hold visible for ~4s */
+  100% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
