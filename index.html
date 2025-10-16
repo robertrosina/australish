@@ -159,31 +159,29 @@
         Join the Australish Rights Council and enter your name into the Witness Roll — a permanent public record of those who stood for recognition. The first thousand names shall be preserved in archive as the founders in record.  </p><p>To add one's name to the Witness Roll is to acknowledge that a founding declaration has been issued in the name of a people, and that this moment has entered public record. It does not require agreement with every clause, nor any pledge of activism, money, or politics. It is simply to affirm: <em>“This Declaration has been made, and I recognise that from this moment, a Council is called into being to speak for the Australish people.” </em></p><p><strong>This is the first step on the road to political representation and self-determination.</strong></p>
 		      </p>
 			  
-			  
-      <form id="join-form" class="row2" style="margin-top:14px" aria-label="Join the Witness Roll">
-        <div>
-          <label class="small muted" for="fullName">Full name</label>
-          <input id="fullName" name="fullName" type="text" placeholder="Jane Citizen" required />
-        </div>
-        <div>
-          <label class="small muted" for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.org" required />
-        </div>
-        <div style="grid-column:1/-1">
-          <label class="small muted" for="locality">Town / State (optional)</label>
-          <input id="locality" name="locality" type="text" placeholder="Glen Innes, NSW" />
-        </div>
-        <div style="grid-column:1/-1; display:flex; align-items:center; gap:8px">
-          <input id="witness" type="checkbox" checked />
-          <label for="witness" class="small muted">Add me to the Witness Roll.</label>
-        </div>
-        <div style="grid-column:1/-1">
-          <button class="btn primary" id="join-submit">Submit</button>
-          <span id="join-status" class="small muted" style="margin-left:8px"></span>
-        </div>
-      </form>
+		<form id="join-form" class="row2" action="https://formspree.io/f/xqaywgbp" method="POST">
+  <input type="hidden" name="_subject" value="Witness Roll Entry">
+  <div>
+    <label class="small muted" for="fullName">Full name</label>
+    <input id="fullName" name="fullName" type="text" required />
+  </div>
+  <div>
+    <label class="small muted" for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+  </div>
+  <div style="grid-column:1/-1">
+    <label class="small muted" for="locality">Town / State (optional)</label>
+    <input id="locality" name="locality" type="text" />
+  </div>
+  <div style="grid-column:1/-1">
+    <label class="small muted" for="note">Note (optional)</label>
+    <textarea id="note" name="note" rows="3" placeholder="Any short message for the record"></textarea>
+  </div>
+  <button type="submit" class="btn primary">Submit</button>
+</form>
+
 	  <section id="witness" class="ledger-display">
-  <details id="witnessRoll" class="card soft" data-src="witnesses.json">
+  <details id="witnessRoll" class="card soft">
     <summary class="btn">Show Witness Roll (Phase I)</summary>
     <div id="witnessContent" style="display:none">
       <p class="small muted">Here listed are witnesses to the Australish Declaration.</p>
@@ -474,32 +472,7 @@ The long-term objective is statutory recognition: that a future <em>Act to Const
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- Simple demo wiring for Join form (replace with real API) ---
-    document.getElementById('join-submit').addEventListener('click', () => {
-      const name = document.getElementById('fullName').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const locality = document.getElementById('locality').value.trim();
-      const witness = document.getElementById('witness').checked;
-      const status = document.getElementById('join-status');
-
-      if(!name || !email){
-        status.textContent = "Please provide your name and email.";
-        return;
-      }
-      status.textContent = "Submitting…";
-
-      // TODO: Replace with real POST to your newsletter/DB
-      // fetch('/api/join', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,locality,witness})})
-      //   .then(r => r.ok ? r.json() : Promise.reject(r))
-      //   .then(() => { status.textContent = "Thank you. You’ve been added to the Witness Roll."; })
-      //   .catch(() => { status.textContent = "There was an error. Please try again later."; });
-
-      setTimeout(() => {
-        status.textContent = "Thank you. You’ve been added to the Witness Roll.";
-      }, 600);
-    });
-
-    // --- Simple demo wiring for Pledge buttons (replace with Stripe/PayPal) ---
+        // --- Simple demo wiring for Pledge buttons (replace with Stripe/PayPal) ---
     const pledgeButtons = document.querySelectorAll('[data-amount]');
     const pledgeStatus = document.getElementById('pledge-status');
     pledgeButtons.forEach(btn => {
@@ -588,115 +561,6 @@ The long-term objective is statutory recognition: that a future <em>Act to Const
       setTimeout(() => preload.remove(), 500);
     }
   }, 5000);
-</script>
-
-<script>
-(function () {
-  const det = document.getElementById('witnessRoll');
-  if (!det) return;
-
-  let loaded = false; // fetch once
-  const src = det.getAttribute('data-src') || 'witnesses.json';
-  const content = document.getElementById('witnessContent');
-  const list = document.getElementById('witnessList');
-  const summary = det.querySelector('summary');
-
-  det.addEventListener('toggle', async () => {
-    // Update summary label
-    summary.textContent = det.open ? 'Hide Witness Roll' : 'Show Witness Roll (Phase I)';
-
-    // Reveal/hide content
-    content.style.display = det.open ? '' : 'none';
-
-    // Lazy-load once
-    if (det.open && !loaded) {
-      loaded = true;
-      summary.insertAdjacentText('afterend', ''); // nudge reflow on some browsers
-      list.innerHTML = '<li class="small muted">Loading…</li>';
-      try {
-        const res = await fetch(src, { cache: 'no-store' });
-        const data = await res.json();
-
-        // Clear and render
-        list.innerHTML = '';
-        (Array.isArray(data) ? data : []).forEach(w => {
-          const li = document.createElement('li');
-          const num = (w.number != null) ? `Witness No. ${w.number} — ` : '';
-          const loc = w.locality ? ` — ${w.locality}` : '';
-          const date = w.date ? ` — Entered ${w.date}` : '';
-          li.textContent = `${num}${w.name}${loc}${date}`;
-          list.appendChild(li);
-        });
-
-        if (!list.children.length) {
-          list.innerHTML = '<li class="small muted">No entries yet.</li>';
-        }
-      } catch (e) {
-        list.innerHTML = '<li class="small muted">Unable to load the roll right now.</li>';
-      }
-    }
-  });
-})();
-</script>
-
-<script>
-(() => {
-  const form = document.getElementById('join-form');
-  const note = document.getElementById('join-status');
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwStnmsfSzOMtFPqvy6vfTIQV069ptFaiQGIG6czK0k9Q1ETUcD_dzMNSNlgdTq8Zw/exec';
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const fullName = document.getElementById('fullName').value.trim();
-    const email    = document.getElementById('email').value.trim();
-    const locality = document.getElementById('locality').value.trim();
-    const witness  = document.getElementById('witness').checked;
-
-    if (!fullName || !email || !witness) {
-      note.textContent = 'Please enter your name, email, and tick the witness box.';
-      return;
-    }
-
-    note.textContent = 'Submitting…';
-    try {
-      const res = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, email, locality })
-      });
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-      note.textContent = 'Recorded. Thank you.';
-      // keep fields for confirmation or clear them; choose your preference:
-      // form.reset();
-      // Optionally refresh the witness list:
-      // loadWitnesses();
-    } catch (err) {
-      note.textContent = 'Could not submit just now. Please try again shortly.';
-    }
-  });
-})();
-</script>
-
-<script>
-async function loadWitnesses(){
-  const LIST_URL = 'https://script.google.com/macros/s/AKfycbwwStnmsfSzOMtFPqvy6vfTIQV069ptFaiQGIG6czK0k9Q1ETUcD_dzMNSNlgdTq8Zw/exec?list=1';
-  try{
-    const res = await fetch(LIST_URL, { method: 'GET' });
-    const arr = await res.json();
-    const ul = document.getElementById('witnessList');
-    ul.innerHTML = '';
-    arr.forEach(entry => {
-      const li = document.createElement('li');
-      li.textContent = `#${entry.number} — ${entry.name} (${entry.locality}) — ${entry.date}`;
-      ul.appendChild(li);
-    });
-    document.getElementById('witnessContent').style.display = 'block';
-  }catch(e){
-    // fail quietly
-  }
-}
-document.addEventListener('DOMContentLoaded', loadWitnesses);
 </script>
 
 
