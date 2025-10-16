@@ -563,6 +563,35 @@ The long-term objective is statutory recognition: that a future <em>Act to Const
   }, 5000);
 </script>
 
+<script>
+(function() {
+  const details = document.getElementById('witnessRoll');
+  if(!details) return;
+
+  details.addEventListener('toggle', function() {
+    if (!details.open) return;
+
+    fetch('witnesses.json?' + Date.now()) // cache-bust
+      .then(response => response.json())
+      .then(data => {
+        const ul = document.getElementById('witnessList');
+        if (!ul) return;
+        ul.innerHTML = '';
+        data.forEach(entry => {
+          const li = document.createElement('li');
+          li.textContent = `#${entry.number} — ${entry.name} (${entry.locality}) — ${entry.date}`;
+          ul.appendChild(li);
+        });
+        const content = document.getElementById('witnessContent');
+        if (content) content.style.display = 'block';
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  });
+})();
+</script>
+
 
 </body>
 </html>
