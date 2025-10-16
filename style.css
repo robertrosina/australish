@@ -1318,7 +1318,7 @@ header.nav[data-collapsed="true"] nav#primary-nav a:hover{
 }
 
 /* Hide the top nav links on narrow screens */
-@media (max-width: 900px) {
+@media (max-width: 1030px) {
   header.nav nav[aria-label="Primary"] {
     display: none !important;
   }
@@ -1404,7 +1404,7 @@ header.nav #primary-nav{
 }
 
 /* Optional: on tighter widths, let nav wrap to a second line before the flag */
-@media (max-width: 980px){
+@media (max-width: 1080px){
   header.nav #primary-nav{
     white-space: normal !important;   /* allow wrapping */
   }
