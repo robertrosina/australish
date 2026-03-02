@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <title>Australish</title>
+  <meta name="description" content="Australish.org is the official site for Australia’s historic ethnocultural founding people." />
+
+  <!-- SYMBOL DEFINTIONS -->
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <defs>
+      <!-- Eureka Cross (refined for crest use) -->
+      <symbol id="icon-eureka" viewBox="0 0 100 100">
+        <rect x="0" y="48" width="100" height="4" rx="1"></rect>
+        <rect x="48" y="0" width="4" height="100" rx="1"></rect>
+        <!-- stars -->
+        <circle cx="50" cy="50" r="8"></circle>
+        <circle cx="50" cy="10" r="5"></circle>
+        <circle cx="50" cy="90" r="5"></circle>
+        <circle cx="10" cy="50" r="5"></circle>
+        <circle cx="90" cy="50" r="5"></circle>
+      </symbol>
+
+      <!-- Quill for Witness Roll / Declaration -->
+      <symbol id="icon-quill" viewBox="0 0 24 24">
+        <path d="M3 21c6-6 10-4 13-7 3-3 4-8 4-8s-5 1-8 4c-3 3-1 7-7 13l-2-2z"></path>
+      </symbol>
+
+      <!-- Shield for Treasury -->
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 2l8 3v6c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11V5l8-3z"></path>
+      </symbol>
+
+      <!-- Seal / Scroll for Recognition -->
+      <symbol id="icon-seal" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="6"></circle>
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+      </symbol>
+
+      <!-- Small star for dividers -->
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="M12 2l2.8 6.7 7.2.6-5.4 4.7 1.7 7-6.3-3.8L6.7 21l1.7-7L3 9.3l7.2-.6L12 2z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="images/australish-crest.png">
+  <meta property="og:title" content="Australish.org">
+  <meta property="og:description" content="A people.">
+  <meta property="og:image" content="images/australish-og.jpg">
+  <meta property="og:type" content="website">
+
+</head>
+<body>
+
+<!-- PRELOAD OVERLAY -->
+<div id="preload" role="status" aria-live="polite" aria-label="Loading">
+  <div class="preload-backdrop" aria-hidden="true"></div>
+  <div class="preload-vignette" aria-hidden="true"></div>
+
+  <div class="preload-content">
+    <p class="preload-line preload-1"><strong>WE ACKNOWLEDGE OURSELVES.</strong></p>
+    <p class="preload-line preload-2"><strong>AND SHALL BE ACKNOWLEDGED.</strong></p>
+  </div>
+</div>
+
+
+  <!-- NAV -->
+<header class="nav">
+
+  
+  <!-- ABSOLUTE CREST -->
+  <img src="images/site-logo.png" alt="Australish Crest"
+    style="position:absolute; left:0; top:50%; transform:translateY(-50%); height:60px; width:auto; margin-left:50px">
+
+  <div class="container row">
+<a href="#home" class="brand" aria-label="Australish home">
+<!--          <strong>Australish</strong> -->
+    </a>
+<nav aria-label="Primary">
+    <a href="#speech">Introductory Speech</a>
+  <a href="#ARC">Australish Rights Council</a>
+  <a href="#charter">Australish Declaration</a>
+	
+</nav>
+
+  </div>
+      <!-- Hard-right flag, not part of the links -->
+    <img src="images/eureka_flag.png" alt="Eureka Flag" class="nav-flag-hardright">
+</header>
+
+</header>
+<!-- HERO -->
+<section id="home" class="parchment">
+  <div class="container hero-grid">
+
+    <!-- Banner (fixed to 'banner' area) -->
+<div class="hero-banner">
+  <video autoplay muted loop playsinline style="width:100%; height:auto; display:block; object-fit:cover;">
+    <source src="images/site-banner.mp4" type="video/mp4">
+  </video>
+</div>
+    <!-- Copy (fixed to 'copy' area) -->
+<!-- Copy (fixed to 'copy' area) -->
+<div class="hero-copy">
+  <h1></h1>
+  
+  
+  
+  <p class="muted" style="margin-top:10px;">
+    <strong>THE AUSTRALISH</strong> are Australia's historic ethnocultural founding people — a distinct people decended from the early British-descended settlers, who meet the recognised definition of a people in international doctrine: a shared origin, a culture grown in a specific territory, and a common civic inheritance. Through recognition this people shall be politically represented, and their continued existence shall be secured through a rights-based case for recognition and self-determination.</em>
+  </p>
+
+	
+  <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap">
+	<a class="btn primary" href="#speech">Read the Speech</a>
+    <a class="btn" href="#charter">Read the Declaration</a>
+      </div>
+</div>
+
+<!-- FLAG (faded horizontal banner cloth + caption) -->
+<figure class="cloth-banner">
+  <div class="cloth-media">
+    <img src="images/eureka_flag_zoomed.png" alt="Eureka Flag">
+  </div>
+  <figcaption class="cloth-caption">
+    The Eureka is the ethnic flag of the Australish people.
+  </figcaption>
+</figure>
+
+
+
+
+</section>
+
+<!-- EPIGRAPH / PROCLAMATION BAND -->
+<section class="epigraph-band">
+  <div class="container">
+    <p class="epigraph-text">
+      We seek the extention of political representation to the historic ethnocultural community that founded Australia — who are on track to become a minority in their own homeland before the end of this decade — within the constitutional framework of the Commonwealth.
+    </p>
+  </div>
+</section>
+
+  <!-- FOUNDERS / JOIN -->
+  <section id="speech" class="bright-band">
+    <div class="container">
+<body>
+<h1>Speech to the First Fleet Forum on the Australish</h1>
+<h2>INTRODUCTION</h2>
+<p><b><em>Australish: the historic British and Anglo-Celtic Australians who, by Federation in 1901, made up over 98 percent of the population, and who are now only a quarter of the Australian population.</em></b></p>
+
+<p>Every nation-people carries its own ethnonym, formed according to linguistic custom. In the Germanic and Romance families, the suffix -ish or its cognates mark belonging: English, Polish, Spanish. Our root is Austral-, from Terra Australis. The natural ethno-form in our language is therefore Australish. It is not an invention but a restoration of grammar and inheritance.</p>
+<p>The Australish, the historic ethnocultural Australians, deserve to be included in the so-called multiculture. Their “nameless” state, however, reinforces the state position that they are not a people to be valued, let alone advocated for.</p>
+<p>Aboriginal “nations” are named, funded, and formally acknowledged at every level of civic life. Migrant ethnic groups are granted advisory councils, liaison offices, multicultural programs, heritage listings, and public assurances that their identity will be preserved, celebrated, and defended from erasure. Refugees, too, are afforded institutional protection and symbolic esteem. Every identity in Australia is formally recognised — except the one that built the nation itself. When the interests of groups are tallied, theirs are not merely ignored — they are quietly placed last. Such is the power of not naming a people.</p>
+<p>The founding Australians are the only group in this country expected to have no council, no charter, and no recognised cultural status. Their gradual disappearance is recast as a virtue — a progressive sacrifice on the altar of diversity.</p>
+<h2>ISSUES OF DISINHERITENCE</h2>
+<h3>PART 1: IMMIGRATION AND MINORITY STATUS</h3>
+<p>The Australish are a distinct ethnocultural people, formed here in Australia between 1788 and 1950. We are not the same as post-1960s British migrants, who remain British by lineage—the “British Australians”. Nor are we simply “Australians” in the modern civic sense, a term that now includes anyone who was just granted citizenship. We descend from the colonial and Federation-era settlers of British and Irish origin who, through local birth, intermarriage, and a shared civic life, became something new — a people native to this continent in the national sense. This phenomenon is known as ethnogenesis. Our language — Australian English — our institutions — the Commonwealth, the ANZAC tradition, the code of mateship and plain speech — all gave rise to a people distinct from their European forebears. Like the Afrikaners in South Africa, the Québécois in Canada, or the Americans in their republic, we became a people of European descent, but of Australian formation.</p>
+<p>In Australia, when recategorized in this way — as possessing a people native to the country Australia (not the continent Australia – you can be one, and not the other) — no single group holds a majority. Today, Australia has a population of 27 million. Of these, fewer than ten million were born in Australia to parents and grandparents also born here. Around ninety percent of that group trace their ancestry to the British Isles. When one removes recent British arrivals and unassimilated lines, roughly seven to eight million remain — the true Australish — amounting to little more than a quarter of the nation.</p>
+<p>And so, by every accepted definition in law and custom, the Australish are now a minority within their own Commonwealth. And this happened without anybody even noticing it. The United Nations, through the Declaration on the Rights of Persons Belonging to National or Ethnic, Religious and Linguistic Minorities, defines a minority by three conditions:</p>
+<ul>
+<li>a distinct ethnicity,</li>
+<li>numerical inferiority,</li>
+<li>and a non-dominant position.</li>
+</ul>
+<p>The Australish are a distinct ethnocultural people, continuous in descent, language, and tradition. We are a numerical minority, forming barely a quarter of the population. And we are non-dominant: we have no recognition, no representative council, and no place within the official multicultural framework that protects every other group.</p>
+<p>By these measures, the Australish are this nation’s only unrecognised minority.</p>
+<p>The Census has no category for “Australish.” “Australian ancestry” is treated as a cultural choice, not a lineage. Thus, the founding people are rendered statistically invisible — absorbed into a label that now means everyone and therefore no one.</p>
+<p>Projections toward mid-century confirm the pattern. By 2050, Asian Australians will likely comprise a quarter of the population and become the largest minority. The Australish will fall below twenty percent. Other European groups will shrink likewise; Indigenous numbers will remain stable. No people will hold a majority in the land once unified by one.</p>
+<p>Under the International Covenant on Civil and Political Rights (ICCPR), to which Australia is bound, two principles govern:</p>
+<ul>
+<li>Article 1 — Self-Determination: All peoples have the right to determine their political status and pursue their economic, social, and cultural development.</li>
+<li>Article 27 — Minority Continuity: Persons belonging to ethnic, religious, or linguistic minorities shall not be denied the right to enjoy their own culture, profess and practise their own religion, or use their own language.</li>
+</ul>
+<p>Australia also endorsed the UN Declaration on the Rights of Persons Belonging to National or Ethnic, Religious and Linguistic Minorities (1992), which requires states to protect minority existence and identity and to create conditions for their cultural, religious, and linguistic development.</p>
+<p>Domestically, the same recognition is embedded in legislation and policy. The Racial Discrimination Act 1975 (Cth) prohibits disadvantage on the basis of ethnic origin. Each state maintains a Multicultural Act or charter that funds, consults, and represents ethnic and linguistic communities: Multicultural NSW Act 2000, Multicultural Victoria Act 2011, Multicultural Queensland Charter 2016, and others. At the federal level, the Australian Multicultural Council advises government on the preservation of minority cultures.</p>
+<p>Taken together, these instruments affirm one principle: cultural continuity is a recognised public good. They create an enforceable expectation that every historic or vulnerable community within the Commonwealth should possess institutional means to maintain its heritage.</p>
+<p>By these same standards, the Australish are entitled to such protection. They satisfy all accepted criteria of minority status. Therefore, to withhold from the Australish the protections extended to every other minority is discrimination by omission. The right already exists in law; what is absent is its application. The remedy is to bring the founding people within the same legal and institutional frameworks that guard the continuity of every other community in Australia. But that all starts with the people rising up and declaring in one voice: we exist. We are the Australish.</p>
+<h3>PART 2: PEOPLEHOOD AND SELF-DETERMINATION</h3>
+<h4>II.1 — INTERNATIONAL LAW: WHAT IS A PEOPLE?</h4>
+<p>UNESCO and the broader corpus of international doctrine define a people as possessing:</p>
+<ul>
+<li>A common historical memory and tradition;</li>
+<li>A distinct cultural expression and language inheritance;</li>
+<li>A connection to a defined homeland;</li>
+<li>A consciousness of shared origin; and</li>
+<li>A continuing will to exist together as a people.</li>
+</ul>
+<p>Each of these conditions is fulfilled by the Australish.</p>
+<p>The founding Australians possess a clear historical memory: settlement, Federation, the ANZAC tradition, the evolution from colony to nation. They possess a shared tongue and civic temperament, a recognisable humour, accent, and folklore, a code of fairness and service, and a relationship to land that turned a colony into a homeland. Foreign observers long recognised this as a distinct ethnocultural type — the Australian in the deeper sense, not of paperwork, but of civilisation.</p>
+<p>When a settler stock transforms into a self-conscious lineage, it becomes a people. So it was with the Quebecois in Canada, the Afrikaners in South Africa, the Scots within the United Kingdom, and many others. International law does not require that a people be indigenous to a continent, nor that it be a minority. It requires only continuity, distinctiveness, and will. By those criteria, the Australish qualify without ambiguity.</p>
+<p>And yet in their own country they are denied that status. The founding Australians are reclassified in official language as the general population — an administrative abstraction that excludes them from every framework of self-determination, minority, or continuity protection. Under established doctrine, however, their existence as a people already stands in fact. What remains is to secure institutional recognition of that fact.</p>
+<p>International law also recognises that erasure can occur administratively. The deliberate omission of a people’s name from public record, while other groups are formally acknowledged, constitutes a breach of internal self-determination. UN instruments caution that when a state recognises multiple peoples within its borders yet denies recognition to one of them, it risks undermining its own legitimacy as a representative authority.</p>
+<p>That principle applies directly to Australia. The Commonwealth acknowledges Aboriginal and migrant peoples through councils, offices, and flags; it names them in ceremony and policy. It does not name the Australish. And so, they are placed last — let alone granted any special privileges (such a thing would be unthinkable). A people that names itself, records itself, and organises lawfully forces the state to address it as a people, not as a demographic. That is the beginning of self-determination — lawful, peaceful, and grounded in precedent.</p>
+<h4>II.2 —ADMINISTRATIVE RESISTANCE</h4>
+<p>What, then, are the consequences of erasure from public life?</p>
+<p>Under Article 1 of the International Covenant on Civil and Political Rights,</p>
+<p>“All peoples have the right of self-determination. By virtue of that right they freely determine their political status and freely pursue their economic, social, and cultural development.”</p>
+<p>It is precisely for this reason that the founding Australians have not been permitted to exist as a named people. To recognise them would be to concede that they too possess the inherent right of self-determination — and that right, once acknowledged, carries obligations the state has long sought to avoid.</p>
+<p>When a people lose their inheritance, history does not call it inclusion. It calls it dispossession. The record of humanity is clear: erasure need not take the form of conquest; it can occur quietly, through the instruments of administration.</p>
+<ul>
+<li>The Jews of Europe, once a recognised civic and religious people, were progressively reduced to a tolerated demographic. Their disenfranchisement began not with violence but with bureaucratic exclusion.</li>
+<li>The Crimean Tatars, displaced under Soviet authority, were later recognised by UNESCO and the European Parliament as a persecuted people denied their inheritance.</li>
+<li>The Gaelic Highlanders were stripped by statute of language, dress, and clan. Centuries later Britain itself acknowledged the Highland Clearances as a policy of internal dispossession.</li>
+<li>The Assyrians of Mesopotamia, among the oldest continuous peoples on earth, were scattered by political reorganisation and neglect. No single decree announced their end, yet international bodies now describe their near-extinction as cultural genocide.</li>
+</ul>
+<p>In each case, the world recognised that when a founding people is deprived of name, symbol, or legal continuity, it suffers a moral injury — whether imposed by war or by bureaucracy.</p>
+<p>Yet when the same pattern unfolds in Australia — when the Australish, the people who built and federated the Commonwealth, are stripped of flag, acknowledgment, name, charter, and institutional standing — the event is not described as cultural destruction. It is spoken of instead as diversity, inclusion, and modernisation.</p>
+<p>If such a process were applied to the Māori in New Zealand, the Sámi in Scandinavia, the Armenians in Armenia, or the Jews in Israel, it would be condemned instantly as dispossession and moral outrage. But because the founding people of Australia are Western, unacknowledged, and without a recognised council, their gradual displacement is invisible — an erasure by silence.</p>
+<p>The moral standard must be one and the same for all peoples. A state that denies continuity to its founders cannot claim legitimacy in the eyes of history.</p>
+<h4>II.3 — MANAGED BUT UNRECOGNISED: ERASURE BY ADMINISTRATION</h4>
+<p>Early Commonwealth records spoke of “the Australian people” — a phrase of inheritance.
+Now our institutions speak of “the Australian population,” of “multicultural communities” and “diverse groups within Australia.”</p>
+<p>Erasure proceeds in five steps:</p>
+<ul>
+<li>Redefine the nation as population.</li>
+<li>Recognise others as distinct peoples.</li>
+<li>Reclassify founders as “mainstream.”</li>
+<li>Create channels for the named to speak.</li>
+<li>Leave the founders outside those channels — silence by design.</li>
+</ul>
+<p>The result: every group can petition and advise, except the one that built the Commonwealth. The Australish may speak as individuals, but not as a people. Their voice is diffuse, their claims invisible.</p>
+<p>The Australish must transition from population to people. So long as we remain unnamed, the Commonwealth may preach inclusivity while excluding its founders by omission. Any other attempts to participate in a nativist movement will fail without this precondition being met — without it, it is just LARPing, imitating the behaviours of Anglosphere nations without having done the intellectual groundwork to walk amongst them. They must restore the founding people to recognised standing so that the Commonwealth once again speaks with its founders, not merely over them.</p>
+<h4>II.4 TERRA NULLIUS REVISITED: THE FIRST ERASURE</h4>
+<p>The moral justification for this erasure is tied to the concept of terra nullius—and more specifically, to the untrue metanarrative Australia tells itself.</p>
+<h5>1) Terra Nullius</h5>
+<p>Australia has moved through three clear stages of political formation:</p>
+<ul>
+<li>Indigenous non-ownership, later clarified in Mabo, which recognised local title but confirmed the absence of pre-existing sovereignty.</li>
+<li>British possession, commencing in 1788, introducing law, language, and the architecture of governance.</li>
+<li>Commonwealth nationhood, achieved in 1901, when one people — overwhelmingly Anglo-Celtic in heritage and civic character — united under a Constitution and were recognised internationally as a sovereign polity.</li>
+</ul>
+<p>Today, however, a fourth and perilous phase is emerging: a return to practical non-ownership — a symbolic second terra nullius — in which the nation’s founding inheritance is erased beneath the language of globalism and “First Nations.” By adopting the term “First Nations,” Australia implicitly asserts that sovereign nations existed prior to the Commonwealth, recasting British settlement as occupation rather than foundation. If tribes are reframed as nations, then the Commonwealth becomes not a founding body but an occupying one. This is the core narrative weapon of our disinheritance—the moral justification for our denial of peoplehood rights and the right to self-determination. But is there any truth to it?</p>
+<h5>2) Legal Backing</h5>
+<p>Under classical and modern international law — from Westphalia to the Montevideo Convention (1933) — a nation requires:</p>
+<p>(i) a people conscious of shared identity;
+(ii) a common language and legal tradition;
+(iii) a unifying history or myth;
+(iv) a defined territorial homeland;
+(v) a collective will toward common sovereignty; and
+(vi) a central legal order extending over the population.</p>
+<p>By this standard, pre-contact Aboriginal societies were kin-based and linguistically diverse, comprising more than 250 languages and over 500 systems of customary law. Anthropologists record complex local governance but no continent-wide polity or confederation. No single law, language, or sovereign will bound these communities into a nation-forming whole.</p>
+<p>By contrast, the founding Australians brought precisely those attributes: a single language, a unified law, a developing civic mythology — the Pioneer, the Bushman, the Digger, the Convict-turned-Citizen — and, by 1901, a conscious act of Federation recognised internationally. In legal and historical fact, Australia became the first and only nation ever formed on this continent.</p>
+<p>Australian jurisprudence remains clear. Mabo (No 2) rejected terra nullius for property purposes but reaffirmed that sovereignty resides in the Crown and is not justiciable. Coe v Commonwealth (1979) further held that no Aboriginal nation exists in Australian constitutional law. Love v Commonwealth (2020) recognised Aboriginal identity for limited constitutional interpretation but did not disturb the singular sovereignty of the Commonwealth.</p>
+<p>International law aligns with this. Montevideo Article 1 defines statehood by permanent population, defined territory, government, and capacity for foreign relations — none of which existed in pre-contact Australia. The UN Declaration on the Rights of Indigenous Peoples (2007) affirms cultural rights but, in Article 46, explicitly preserves the territorial integrity and political unity of existing states.</p>
+<p>It is a matter of legal fact — not opinion — that only one sovereign nation has ever been formed in Australia, the Commonwealth of Australia, and it was formed by the British-descended people who became the Australish.</p>
+<h5>POLICY ISSUES</h5>
+<h6>THE INVENTION OF “FIRST NATIONS” — WEAPONISED LANGUAGE</h6>
+<p>In spite of it being a false claim, when a state repeatedly declares itself to stand “on First Nations land,” it implicitly asserts that the Commonwealth was not the first nation here. The ritual acknowledgment, repeated in schools and parliaments, establishes a hierarchy: those named first are assumed to be the original sovereigns; those unnamed appear as guests. This is a major instantiation of the metanarrative leading to erasure of the Australish people by administration.</p>
+<p>This practice is not mere courtesy; it is jurisdictional symbolism. Children raised hearing that “Australia sits on First Nations land” will naturally assume that their own ancestors built a state upon another’s sovereignty — that they are inheritors of a wrong rather than of a nation. Such framing cannot coexist with civic confidence or historical truth.</p>
+<p>This is not accidental language; it is deliberate. Over time, the ceremony has become embedded in official protocol, repeated in schools, parliaments, and public institutions. It acknowledges land custodianship claims but not the act of nation formation itself.</p>
+<p>The solution is simple: speak the full record.</p>
+<p>“We acknowledge the Australish — the living founders of this nation — who built the Commonwealth upon which all our institutions stand.”</p>
+<p>Such recognition restores balance. It does not erase others; it corrects omission. It affirms that this nation was indeed founded; that the people who gave it law, language, and unity still exist; and that they, too, are owed continuity and respect.</p>
+<p>The ritual must speak for all who have built this country, not only for those who predated it. Recognition begins in language, and language, once set right, restores the moral order of the Commonwealth.</p>
+<h6>FLAG DOCTRINE: SYMBOLIC DISINHERITANCE</h6>
+<p>Another major instantiation relates to the flag. The symbols a state adopts determine, in the eyes of its people, who is seen and who is forgotten. Flags are not decoration; they are declarations of standing.</p>
+<p>In 1995, under Commonwealth Gazette No. S297, the Aboriginal and Torres Strait Islander flags were formally proclaimed as Flags of Australia pursuant to Section 5 of the Flags Act 1953. This was done by executive proclamation — without referendum, without parliamentary debate, and without formal consultation with the citizenry. From that day forward, the Commonwealth officially recognised three banners in civic space:</p>
+<ul>
+<li>The Australian National Flag, now interpreted less as the banner of a people and more as the flag of government administration;</li>
+<li>The Aboriginal Flag, representing a specific ethnocultural community;</li>
+<li>The Torres Strait Islander Flag, representing another ethnocultural community.</li>
+</ul>
+<p>Thus, two defined ethnic identities acquired state-sanctioned symbols, while the founding people who built the Commonwealth — the Australish — were granted none.</p>
+<p>In comparative perspective, this is extraordinary. No other nation has elevated minority banners to equal legal standing while withholding recognition from its founding majority. Japan does not raise the Ainu flag alongside the Hinomaru; Israel does not fly Bedouin or Druze flags as co-equal national emblems; neither Poland, Hungary, nor the United States has established ethnic flags as “national” symbols. Australia stands alone in having symbolically enthroned minorities while erasing its founding ethnos from representation.</p>
+<p>No formal recognition exists for a Flag of the Australish, though one emblem already embodies that heritage — the Eureka Standard. That flag, born at Ballarat and carried by the early settler stock in defence of liberty and justice, represents the ethos from which the nation was forged. Its use remains unofficial, and at times prohibited by policy.</p>
+<p>This is the doctrine of symbolic disinheritance: when a people loses its banner, it loses its recognised presence. The restoration to a truthful metanarrative that informs policy must begin here — with acknowledgment in emblem, so that every child who looks upon the flags of the Commonwealth may once again see the people who built it.</p>
+<h6>BEYOND SYMBOLS</h6>
+<p>The matter extends beyond any overarching narrative. Many Australians would struggle to imagine a civic order in which the following measures existed for the preservation and dignity of the Australish native people:</p>
+<ul>
+<li>Forms for employment and social programs including the question: “Do you identify as Australish?”</li>
+<li>Welcome to Country ceremonies that explicitly acknowledge the Australish.</li>
+<li>The ubiquitous visible presence of Australish art in public and cultural spaces as a sign of shared solidarity with native peoples.</li>
+<li>The Eureka flag displayed alongside, or symbolically integrated with, the Australian flag.</li>
+<li>Regular consultation with Australish voices on cultural questions that affect their community.</li>
+<li>An Australish Day observed through national recognition and local gatherings that honour their culture and heritage.</li>
+<li>A sober public understanding that the disappearance of a people is a profound loss, and that preservation is therefore a duty.</li>
+<li>Consistently respectful representation in media, public discourse, and political life.</li>
+<li>Legal custodianship over designated heritage, memorial, and cultural continuity sites, forming protected cultural enclaves anchored in law.</li>
+<li>Fair and equal access to government cultural and heritage funding, in parity with the support extended to Aboriginal, multicultural, and religious bodies.</li>
+</ul>
+<p>In modern Australia, the very idea of it is repugnant. And yet, I ask you, what is the alternative?</p>
+<h4>II.5 — A CHOICE</h4>
+<p>No spontaneous correction will come. The administrative order is designed to proceed without us, confident that no recognised body stands to object.</p>
+<p>Two paths remain:</p>
+<ul>
+<li>To fade as a managed population under others’ moral ownership, or</li>
+<li>To re-enter the civic record as a people — named, lawful, and continuous. To assert our minority rights and our right to self-determination and assert political power that will see our interests realised.</li>
+</ul>
+<p>Once a people possesses institutional form, silence can no longer be mistaken for absence. The State must choose whether to acknowledge or to suppress. That choice — once made visible — marks the first step toward restoration.</p>
+<h4>III.1 — PARITY OF RECOGNITION: INTERNATIONAL PRECEDENTS</h4>
+<p>No people in history has ever been recognised before it moved in its own name. Recognition follows declaration, and declaration must be made by the people themselves.</p>
+<p>The Québécois in Canada ceased calling themselves “French Canadians” and declared a distinct people. The Basques, Catalans, Sámi, Flemish, and Romansh each formed councils, parliaments, or language boards to assert continuity within their states. The Scots and Welsh rebuilt devolved assemblies to restore historic standing. In the wider world, the Māori created iwi councils and the Māori Parliament long before formal recognition. The Afrikaners founded the Broederbond and later cultural institutions to preserve language and heritage. The Ainu of Japan, Tamils, Tibetans, and Armenians petitioned for recognition as enduring peoples within larger sovereignties. The Assyrians, Kurds, and Yazidis have done the same across the Middle East, as have the Frisians, Bretons, and Corsicans in Europe.</p>
+<p>From every continent the same pattern holds:</p>
+<ul>
+<li>A people names itself.</li>
+<li>It petitions the State.</li>
+<li>It forms its Council or Charter.</li>
+</ul>
+<p>The Australish now follow this universal pattern. Every other group in Australia is encouraged to maintain ethnic consciousness — Aboriginal, Greek, Italian, Lebanese, Chinese, Sikh. Each is praised for doing so. Only the founders are told to have none at all, to dissolve into a generic Australian as that label expands to include all others.</p>
+<p>That is how a people vanishes in the modern age — by being administratively managed out of existence. The answer is not protest but form. Recognition must be reclaimed by the same lawful means through which others secured theirs via international and domestic doctrine: the right of self-determination, and the right of minority protection. Neither are possible without the will of the people – it starts with a discussion, that will undoubtably be met with animus. Hold the line, and hold on to who you are as a people. The principled position will win out in the end, but without the clear understanding of who the Australish are and why they deserve protection and rights nothing can be accomplished.</p>
+<h4>III.2 — POLITICAL BACKGROUND: THE FAILURE OF CURRENT APPROACHES</h4>
+<p>The progressive left speaks of “diversity,” “equity,” and “inclusion,” yet practises selective favouritism — elevating chosen groups as symbols of virtue while declaring war on the cultural inheritance of the founding people with guilt, bureaucracy, and the slow violence of narrative control. Its worldview has become Manichaean — the perpetual “us” and “them.” Within this moral theatre, the Australish are cast as the hereditary villains, condemned for the very civilisation they built.</p>
+<p>Its moral economy depends on a permanent imbalance — celebrated minorities and contrite majorities — but that equilibrium has already collapsed. Mass immigration has dissolved the very majority upon which its politics of guilt depends. When everyone becomes a minority, the currency of victimhood loses value, and the hierarchy built to wield moral power will implode under its own arithmetic. Through their own success, the left have lost their moral authority—though they continue to hold the narrative, regardless of its falsehoods.</p>
+<p>The right wing has passion but no architecture. When it acts, it does so with such political clumsiness that it hands victory to its opponents. Its rebellion shouts against the system, yet never strikes the structure. The populist impulse channels real frustration, but it remains reactive. Without a moral wedge — the kind the left wielded with great success for half a century — populism becomes mere protest: loud, momentary, and easily absorbed by the very establishment it opposes. Its patriotic approach, still common among the grassroots, has been hollowed into loyalty to a legal jurisdiction open to all, a multicultural Australia that anyone may join through paperwork. Integrationism fares no better: it invites others to join a culture that is no longer accessible, while retaining everything about themselves while recreating their countries of origin on foreign soil.</p>
+<p>The reigning orthodoxy of both left and right claims that every passport holder is equal in cultural and political standing to the descendants of those who built the nation. In doing so, it concedes the premise of dispossession: that Australia belongs to no particular people. If “Australian” is undefined beyond paperwork, then there is no people to defend, no continuity to preserve, and no lawful claim to inheritance. This creed has hardened into the universal slogan, “for all Australians.” It is repeated everywhere — by populists, patriots, and progressives alike. In practice, it means for everyone but the founders.</p>
+<p>The phrase for all Australians sounds generous but functions as camouflage. It hides the quiet fact that some identities will be preserved, others celebrated, and one — the founding one — politely omitted. Those who speak of “all” rarely say they are for us. They have councils, festivals, and institutions that honour their heritage. When the founders ask for the same, they are told it is divisive.</p>
+<p>I say be for the Australish — and through that centre, all others may find their rightful place. The war will be won by restoring the axis around which all else can turn. England recovered its confidence not by saying it was “for all British,” and waving the British flag, but by remembering that England is for the English, and waving the St Georges Cross. Australia will not be whole until its founding people are named, respected, and represented. Do not fear that such truth will estrange allies — it will draw to you the honest and the just. When a cause is rooted in truth, the righteous rally to it. This is not exclusion — it is restoration. The proper moral order begins when each stands where history placed them, and when those who built the nation are again acknowledged as its living foundation.</p>
+<h4>III.3 — FRAMING THE ALTERNATIVE: WHY THE AUSTRALISH PATH IS SUPERIOR</h4>
+<p>First, name the people. Speak plainly of the Australish as a distinct ethnocultural nation within the Commonwealth. Affirms that this people, like all others recognised under international doctrine, holds the inherent right to exist, to be recognised, minority rights, and to exercise political agency within the law.</p>
+<p>That shifts the ground from protest to principle. It ceases to plead for fairness and instead asserts standing: we are a people with rights. The system can ignore sentiment, but it cannot indefinitely deny a lawful claim once defined. This approach cannot be co-opted, because its foundation is precise and verifiable — lineage, record, and continuity. It applies the same moral logic that underpins Aboriginal and First Nations advocacy, yet returns that logic to the people who built the nation itself.</p>
+<p>To do this is to restore a centre of gravity. Australia today is a managerial state — a service apparatus without declared heirs, balancing the moral authority of Aboriginal symbolism against the demographic arithmetic of global immigration. Recognising the Australish restores that lost anchor — the point around which all others may orbit in balance. This does not diminish minorities; it grants them a stable host culture into which they may integrate at sustainable levels. It reinstates the lawful hierarchy of belonging that every enduring civilisation requires: a core inheritance that welcomes others without ceasing to be itself.</p>
+<p>The Commonwealth’s institutions were built by the Australish. They function best when the spirit that created them is honoured. This is the necessary vanguard for any movement that seeks to build a culturally coherent Australish Australia — or at minimum, to ensure such places endure within the country as a whole.</p>
+<h5>Benefits to All Aussies</h5>
+<p>The recognition of the Australish, their attainment of minority protections, and the shift in metanarrative this would facilitate, also re-opens what has long proven politically impossible: the moral and legal ground to reform demographic policy. For the past fifteen years, based on the top source countries for permanent migrants to Australia, the country has become progressively more like Asia, Africa, and the Middle East—and as a result, less like the nation the Australish founded. If things continue, that is the future of Australia—this is not commentary, it is statistical fact. For three decades, the political right has lamented the transformation of the nation yet failed to reverse it — because it dared pursue the interests of the people whose continuity was at stake. Once the Australish are acknowledged as a historic people, population policy becomes not a question of economics but of national duty — the duty of the Commonwealth to its founders. Recognition of the Australish would not abolish multiculturalism; it would order it — transforming a flat ideology into a structured harmony of identities beneath a primary nation. It would allow those who come here to honour the host people, rather than dissolve them. If this is a scenario that most Aussies would like, they must support our cause, for I foresee no other pathway to this reality—the political, legal, cultural, and economic barries are quite simply too formidable.</p>
+<p>The right has spent decades on the defensive — reactive, fragmented, and mocked. It lost the moral high ground because it spoke only of resentment and economy, never of inheritance or duty. When the language of duty and inheritance returns, the cause ceases to sound like reaction and begins to sound like restoration. The left, for its part, has committed the opposite failure. Where the right forgot duty, the left forgot reality. It denied that demographic transformation had consequence, treating population as arithmetic and culture as costume. Worse, it practised a politics of favouritism — elevating chosen ethnicities as symbols of virtue while casting the founding people as a moral stain upon the nation they built. Under its rule, the Aboriginal cause became a theatre for absolution, migrant identity a badge of innocence, and the historic Australians the convenient villain in every national story. It mistook perpetual change for progress—regardless of the rationale, all agree that progress has not been achieved. That “things are shit now”.</p>
+<p>The Australish path proposes a renewed constitutional settlement within the Commonwealth — one in which the founding people are again named, respected, and protected. Such recognition permits the rebirth of institutions, festivals, scholarships, and civic symbols that honour the living heritage of the Australish — a culture of contribution to be proud of. Most importantly, it opens up the possibility of an Australia not as it was, but as it could have been where the experiment of mass immigration not forced on us against our will, and to our detriment above all others. An Australia growing less, not more, like Asia, Africa, and the Middle East, and more like us, the Australish, and with our symbols and heritage acknowledged. The return of the axis—at best nationally, should ambitious policies like remigration ever substantiate (unlikely, but who knows), or at worst in areas under our custodianship. Recognition of the Australish would not halt change, but it would give the nation the right to decide what kind of change occurs. When the character of a population shifts, it inevitably becomes more like some things and less like others. That is not an insult—it is description. Recognition would allow those decisions to be made deliberately, because only when the founding people are acknowledged in law can population policy include their continuity as a legitimate national interest.</p>
+<h4>III.4 WHAT HAPPENS NEXT: THE CONSTRUCTIVE HORIZON</h4>
+<p>We must make a the argument, far and wide. Declare that the builders of the Commonwealth are a distinct ethnocultural people under international law. Affirm that we meet every recognised criterion of peoplehood: a shared history, culture, descent, homeland, and collective will to endure. State that our right to self-determination is inherent under the very covenants the Commonwealth already upholds.
+Further affirm that, as a recognised minority within the Commonwealth, the Australish also hold the concurrent right to continuity and cultural protection under Article 27 of the International Covenant on Civil and Political Rights. This is the moral and legal foundation for everything that follows.</p>
+<h3>PART 4 — CONCLUSION</h3>
+<p>Every civilisation has an axis — a point of moral and cultural gravity around which all else revolves. When that axis stands firm, the world around it finds balance. When it falls, confusion reigns.
+Australia’s axis was once clear. The Australish stood at its centre: a people bound by shared labour, speech, and memory, whose confidence drew others into their orbit. Those who came here did not despise that centre — they were drawn to it. They saw a people who knew who they were, and in that clarity they found belonging. Today, that axis has been deliberately removed.
+We stand upon two concurrent streams of right: self-determination, the power of initiative; and minority protection, the power of endurance. Our aim is parity: that the founding people of the Commonwealth be accorded the same institutional standing already extended to Aboriginal, migrant, and minority communities.</p>
+<p>We act so that those yet unborn may inherit name, memory, and home. For we have no other homeland.</p>
+<p>We seek to restore the moral and legal covenant between the Commonwealth and its first civic people. We will pursue this through lawful endurance alone: by record, by petition, by persistence.</p>
+<p>From this point onward, the founding people of the Commonwealth are once again a living presence in civic life. We have reclaimed the right to speak, to organise, and to endure.</p>
+<p>To the Australish — the heirs of the Commonwealth — enter your name into record, that you may never again be erased from it. And realise the promise of the Australish people.</p>
+<p>So let it be written that in this late hour — when the law had forgotten us, when our elites turned against us, when the axis had fallen — the Australish stood once more and reclaimed the centre.</p>
+<p>We stand as one people — the Australish — and soon the Commonwealth shall find its balance again.</p>
+<p>We act in inheritance. We act for survival. We will not fade away, in culture and people, our memory sullied in our absence. We shall go on till the end. In the words of Australish legend Banjo Patterson: “The changes in our life must come from the impossibility to live otherwise than according to the demands of our conscience.”</p>
+<p>Conscience demands that we endure.</p>
+<p>We acknowledge ourselves. And we shall be acknowledged.</p>
+<p><em>Speech to the First Fleet Forum, October 2025 (edited for print)</p></em>
+</section>
+
+<!-- ARC MANDATE -->
+<section id="ARC" class="band">
+  <div class="container">
+
+    <h2 class="treasury-title">Australish Rights Council</h2>
+	
+    <h3 class="treasury-title"><em>The Path to Representation, Self-Determination, and Survival</em></h3>
+
+    <p class="treasury-copy">
+	
+Under Article 1 of the International Covenant on Civil and Political Rights, to which the Commonwealth of Australia is a signatory, all peoples possess the right to self-determination. This right does not originate from the state but from peoplehood itself. The Australish, being a historic ethnocultural people formed on this soil, therefore assert their right to representation and cultural continuity under this principle. </p>
+	
+    <p class="treasury-copy">
+	Australia may have one citizenship, but it does not follow that it has only one people. As seen in Canada, South Africa, or the United Kingdom, a single state can lawfully contain multiple historic peoples, all sharing citizenship while maintaining distinct inherited identities. “Australian” is a civic category — a multicultural legal status open to any person granted citizenship, regardless of ancestry or culture. A person may hold Australian citizenship while possessing only the language, customs, and identity of their ethnic people, and this does not affect how "Australian" they are. By contrast, “Australish” is not a civic status but an ethnocultural one, inherited through descent from the founding settler population. If every Australish citizen were removed from Australia, and the population that remained still held Australian citizenship, the country would be just as Australian as it ever was. This illustrates how “Australian” is a civic identity, while “Australish” names an ethnocultural people — one whose existence is not guaranteed simply by the maintenance of the state.
+</p>	
+
+
+	  
+	       
+	       <div class="rounded-frame"><img src="images/rebellion.jpg" alt="Eureka Rebellion" style="width:100%"></div>
+			<p><em><strong>The Eureka Rebellion</strong> — when Australish men first raised a flag in rebellion against rule without representation. Today, unauthorised public use of that same flag is prohibited under Federal Court order, while no such prohibition applies to the Aboriginal or Torres Strait Islander flags.</p></em>
+			
+    <p class="treasury-copy">
+
+      The Australish people — as with any people — cannot be represented until they are recognised in law. If no formal body exists, then legally the Australish people do not exist — and what does not exist cannot be represented. Without legal recognition, their interests cannot be heard, and without representation, their decline proceeds without objection or record until culminating in erasure. Recognition grants standing — the status required to be considered in law, to enter public record, to petition formally,
+      and to secure priority in decisions that distribute power and resources.
+      <strong>Without standing, a people will be excluded entirely from consideration in every institutional decision</strong> — which is the current state of affairs.
+    </p>
+
+  <p class="muted" style="margin-top:10px;">
+      To gain that standing, a people must first speak through an institution that can be recognised in law.
+      For that reason, we have prepared the <strong>Australish Declaration</strong>, a founding charter of intent to begin the establishment of the
+      <strong>Australish Rights Council</strong> — a civic body grounded in treasury, ledger, and defined milestones, so that representation for  the native founding population of Australia begins not as sentiment but as structure.
+    </p>
+	
+</section>
+
+
+
+  <!-- CHARTER IN BRIEF -->
+  <section id="charter" class="bright-band">
+    <div class="container">
+      <div style="margin-top:18px">
+ <h2>The Australish Declaration</h2>
+
+		<div class="rounded-frame">  <img src="images/charter.png" alt="Charter" style="width:100%"></div>
+    </div>
+	
+    <p>
+      The Australish people stand today without recognition in the Commonwealth they founded. A people unrecognised is a people already being erased.</p>
+
+	  
+	  <p><strong>THE AUSTRALISH DECLARATION</strong> marks the moment a people organises itself and hereby founds the 
+      <strong>Australish Rights Council</strong> — first as a civic body grounded in treasury, ledger, and witness, and in time to be
+      established as a statutory body in Commonwealth law. This Charter of Intent sets the ordered path by which a people passes from sentiment to structure, from private
+      conviction to representation, from scattered voices to a recognised Council able to stand in law and in public record. Power in the Commonwealth is exercised according to established norms. mechanisms. Sentiment, protest, activism, and even a voting majority, without institutional form, do not enter those mechanisms. Only through deliberate navigation of recognised structures can a people take part in the processes by which representation and authority are allocated. Put simply: the system has rules, and only those who organise according to them are heard by it.
+    </p>
+			
+		  <p>In issuing this Declaration, the Australish people form their Council in principle. 
+<strong>Even before any law is passed, such a Council carries real authority — because a people who organise, keep a ledger, and hold a treasury are already exercising representation.</strong>
+The long-term objective is statutory recognition: that a future <em>Act to Constitute the Australish Rights Council </em>would recognise it in Commonwealth law as a permanent representative institution empowered to speak in public record and authority on behalf of the Australish people.    </p>
+			
+		  <p>The Council’s <strong>Operational Directive </strong>accompanies this Declaration as its working instrument — setting out the staged goals, mechanisms, and institutional milestones by which the Declaration passes from proclamation to established authority.</p>
+        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap">
+<a class="btn primary gold-btn" href="documents/declaration.pdf?download=true" download="Australish_Declaration.pdf" target="_blank" rel="noopener">
+  View Declaration
+</a>
+
+
+<a class="btn" href="documents/directive.pdf" download="Australish_Directive.pdf" target="_blank" rel="noopener">View Operational Directive</a>
+
+
+</div>
+
+	        
+	
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container" style="padding:24px 0; display:grid; gap:14px; grid-template-columns:1fr; align-items:center">
+      <div><span class="footer-crest"><strong>Australish.org</strong></span><br>
+        <span class="small muted">We acknowledge ourselves. And shall be acknowledged.</span>
+      </div>
+      <div style="justify-self:end; display:flex; gap:14px; flex-wrap:wrap">
+        <a class="small" href="documents/declaration.pdf?download=true" download="Australish_Declaration.pdf" target="_blank" 
+   rel="noopener">Download Declaration (PDF)</a>
+		<a class="small" href="#treasury">Contribute</a>
+        <a class="small" href="#founders">Join</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--line)">
+      <div class="container small muted" style="padding:14px 0; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <span>© <span id="year"></span> Australish Rights Council</span>
+        <span style="display:flex; gap:12px">
+          <a href="#" class="small">Privacy</a>
+          <a href="#" class="small">Correspondence</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Simple demo wiring for Pledge buttons (replace with Stripe/PayPal) ---
+    const pledgeButtons = document.querySelectorAll('[data-amount]');
+    const pledgeStatus = document.getElementById('pledge-status');
+    pledgeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const amt = btn.getAttribute('data-amount');
+        pledgeStatus.textContent = `Preparing pledge of $${amt}…`;
+
+        // TODO: Hook to Stripe Checkout or PayPal
+        // window.location.href = '/donate?amount=' + amt;
+
+        setTimeout(() => {
+          pledgeStatus.textContent = "Redirecting to secure payment… (demo)";
+        }, 600);
+      });
+    });
+    document.getElementById('custom-pledge')?.addEventListener('click', () => {
+      const amt = prompt("Enter custom pledge amount (AUD):");
+      if(!amt) return;
+      pledgeStatus.textContent = `Preparing pledge of $${amt}…`;
+      setTimeout(() => {
+        pledgeStatus.textContent = "Redirecting to secure payment… (demo)";
+      }, 600);
+    });
+
+  </script>
+  <script>
+  // --- Demo progress (edit starting values here) ---
+  let pledged = 3,200; // AUD
+  const goal = 8000;
+  const bar = document.getElementById('treasury-bar'); // was 'progress-bar'
+  const pledgedLabel = document.getElementById('treasury-pledged'); // optional label that exists elsewhere
+
+  function renderProgress(){
+    if (bar){
+      const pct = Math.max(0, Math.min(100, (pledged/goal)*100));
+      bar.style.width = pct.toFixed(2) + '%';
+    }
+    const statTreasury = document.getElementById('stat-treasury');
+    if (statTreasury) statTreasury.textContent = `$${pledged.toLocaleString()}`;
+    const statGoal = document.getElementById('stat-goal');
+    if (statGoal) statGoal.textContent = `$${goal.toLocaleString()}`;
+    if (pledgedLabel) pledgedLabel.textContent = `$${pledged.toLocaleString()} pledged · Goal: $${goal.toLocaleString()}`;
+  }
+  renderProgress();
+</script>
+
+
+  <script>
+  // --- Preload overlay control ---
+  (function(){
+    const overlay = document.getElementById('preload');
+    if(!overlay) return;
+
+    // Minimum display time so the line is actually seen
+    const MIN_MS = 4000;
+
+    const start = performance.now();
+    function dismiss(){
+      const elapsed = performance.now() - start;
+      const wait = Math.max(0, MIN_MS - elapsed);
+      setTimeout(() => {
+        overlay.classList.add('fade-out');
+        overlay.addEventListener('animationend', () => overlay.remove(), { once: true });
+      }, wait);
+    }
+
+    // Dismiss when DOM ready and after images try to resolve
+    if (document.readyState === 'complete') {
+      dismiss();
+    } else {
+      window.addEventListener('load', dismiss);
+      // Safety: if on slow connections, dismiss anyway after 3.5s
+      setTimeout(dismiss, 3500);
+    }
+  })();
+  
+</script>
+
+<script>
+  // Fallback: hide preload after 5 seconds if it's still visible
+  setTimeout(() => {
+    const preload = document.getElementById('preload');
+    if (preload && !preload.classList.contains('fade-out')) {
+      preload.classList.add('fade-out');
+      // optional: fully remove it from DOM after fade-out ends
+      setTimeout(() => preload.remove(), 500);
+    }
+  }, 5000);
+</script>
+
+<script>
+(function() {
+  const details = document.getElementById('witnessRoll');
+  if(!details) return;
+
+  details.addEventListener('toggle', function() {
+    if (!details.open) return;
+
+    fetch('witnesses.json?' + Date.now()) // cache-bust
+      .then(response => response.json())
+      .then(data => {
+        const ul = document.getElementById('witnessList');
+        if (!ul) return;
+        ul.innerHTML = '';
+        data.forEach(entry => {
+          const li = document.createElement('li');
+          li.textContent = `#${entry.number} — ${entry.name} (${entry.locality}) — ${entry.date}`;
+          ul.appendChild(li);
+        });
+        const content = document.getElementById('witnessContent');
+        if (content) content.style.display = 'block';
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  });
+})();
+</script>
+<script>
+(function () {
+  const form = document.getElementById('join-form');
+  const msg  = document.getElementById('form-message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();               // <-- stops the page navigation
+    msg.textContent = 'Submitting…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),     // send exactly what’s in the form
+        headers: { 'Accept': 'application/json' } // ask Formspree for JSON
+      });
+
+      if (!res.ok) throw new Error('Network/endpoint error');
+      // Optional: you can check await res.json() here if you want
+      msg.textContent = 'Thank you — your name has been received.';
+      form.reset();                   // keep or remove if you want fields to remain
+    } catch (err) {
+      msg.textContent = 'Could not submit right now. Please try again shortly.';
+    }
+  });
+})();
+</script>
+
+
+</body>
+</html>
